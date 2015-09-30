@@ -13,10 +13,10 @@ dist/
 nbdist/
 nbactions.xml
 nb-configuration.xml
-**/[Bb]in
+**/[Bb]in/**
 
 # Generated and exemples
-**/Exemples
+**/Exemples/**
 
 
 # Class Files #
