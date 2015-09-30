@@ -1,0 +1,9 @@
+METIER
+Jean : écriture d'un plat => fait
+Jean : lecture d'un plat => fait
+Jean : création d'une énumération pour le type de plat => fait
+Jean : ajout de plats au menu ... en cours si autorisé ...
+
+INTERFACE GRAPHIQUE
+Jean : permettre l'utilisation de nombres flottants dans le spinner pour le prix => fait
+Jean : Selection du type de plat depuis une énumération => fait
