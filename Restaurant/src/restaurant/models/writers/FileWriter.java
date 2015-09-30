@@ -13,6 +13,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Iterator;
+import restaurant.models.javaUtilities.PathTranslator;
 import restaurant.models.javaUtilities.StringBuilderUtility;
 import restaurant.models.writers.generics.Writer;
 
@@ -32,7 +33,7 @@ public class FileWriter extends Writer {
         for (int i = 0, t = subs.length - 1; i < t; ++i) {
             builderU.appendAll(subs[i], i < t - 1 ? "\\" : "");
         }
-        return builderU.getString();
+        return PathTranslator.translate(builderU.getString());
     }
 
     @Override

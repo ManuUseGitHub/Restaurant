@@ -7,6 +7,7 @@ package restaurant.models.demo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import restaurant.models.javaUtilities.PathTranslator;
 import restaurant.models.work.Dish;
 import restaurant.models.writers.Concretes.FileWriterUtilityForDish;
 import restaurant.models.writers.generics.Writer;
