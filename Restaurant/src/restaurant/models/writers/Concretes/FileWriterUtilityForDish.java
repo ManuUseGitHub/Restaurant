@@ -6,14 +6,12 @@
 package restaurant.models.writers.Concretes;
 
 //Contient les classes Files, Paths, etc.
-import java.util.ArrayList;
 import java.util.Iterator;
 import restaurant.models.javaUtilities.StringBuilderUtility;
 import restaurant.models.work.Dish;
 import restaurant.models.work.IPlat;
 import restaurant.models.writers.FileWriter;
 import restaurant.models.writers.FolderWriter;
-import restaurant.models.writers.exceptions.ConfigurationMissingException;
 import restaurant.models.writers.generics.IWriter;
 import restaurant.models.writers.generics.Writer;
 

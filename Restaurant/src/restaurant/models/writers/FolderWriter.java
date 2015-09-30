@@ -7,6 +7,7 @@ package restaurant.models.writers;
 
 import java.io.File;
 import java.util.Iterator;
+import restaurant.models.javaUtilities.PathTranslator;
 import restaurant.models.writers.generics.Writer;
 
 /**
@@ -34,7 +35,7 @@ public class FolderWriter extends Writer {
 
     @Override
     public WriteStatus write(String content) {
-        if (!new File(getPath()).mkdirs()) {
+        if (!new File(PathTranslator.translate(getPath())).mkdirs()) {
             return WriteStatus.ALLREADY_EXISTS;
         }
         return WriteStatus.SUCEED;

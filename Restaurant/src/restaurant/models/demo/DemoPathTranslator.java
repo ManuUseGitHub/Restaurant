@@ -5,7 +5,7 @@
  */
 package restaurant.models.demo;
 
-import restaurant.models.javaUtilities.PathConverter;
+import restaurant.models.javaUtilities.PathTranslator;
 
 /**
  *
@@ -13,8 +13,8 @@ import restaurant.models.javaUtilities.PathConverter;
  */
 public class DemoPathTranslator {
     public static void main(String[] args) {
-        System.out.println(PathConverter.translate("c:\\My folder\\files.txt"));
-        System.out.println(PathConverter.translate("c:/My folder\\files.txt"));
-        System.out.println(PathConverter.translate("c:/My folder/files.txt"));
+        System.out.println(PathTranslator.translate("c:\\My folder\\files.txt"));
+        System.out.println(PathTranslator.translate("c:/My folder\\files.txt"));
+        System.out.println(PathTranslator.translate("c:/My folder/files.txt"));
     }
 }
