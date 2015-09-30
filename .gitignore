@@ -20,12 +20,12 @@ nb-configuration.xml
 
 
 # Class Files #
-*.class
+**.class
 
 # Package Files #
-*.jar
-*.war
-*.ear
+**.jar
+**.war
+**.ear
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
