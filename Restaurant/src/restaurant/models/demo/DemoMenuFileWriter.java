@@ -17,7 +17,7 @@ public class DemoMenuFileWriter {
 
     public static void main(String[] args) throws Exception {
         
-        String name = "Super menu d'exemple"; 
+        String name = "Super menu d'exe"; 
         Menu menu = new Menu(name.hashCode(),name,5.5f);
         
         String outFilePath = String.format("Exemples\\menusGenerated\\%d\\%s",menu.getId(),menu.getNom());
