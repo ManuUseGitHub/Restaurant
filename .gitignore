@@ -1,3 +1,31 @@
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# NetBeans specific #
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+/[Bb]in
+
+# Generated and exemples
+/Exemples
+
+
+# Class Files #
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
@@ -34,27 +62,3 @@ $RECYCLE.BIN/
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-
-# NetBeans specific #
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
-nbactions.xml
-nb-configuration.xml
-
-# Class Files #
-*.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
