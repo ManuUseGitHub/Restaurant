@@ -26,7 +26,7 @@ public class DemoDishFileWriter {
         String name = "XXX"; 
         Dish dish = new Dish(name.hashCode(),name,5.5f,ingredients);
         
-        String outFilePath = String.format("generated\\%d\\%s",dish.getId(),dish.getNom());
+        String outFilePath = String.format("Exemples\\generated\\%d\\%s",dish.getId(),dish.getNom());
 
         FileWriterUtilityForDish writer = new FileWriterUtilityForDish(outFilePath);
         writer.setDish(dish);

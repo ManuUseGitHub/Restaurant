@@ -29,7 +29,7 @@ public class DishFileReader extends Reader {
     }
 
     public DishFileReader(String inFilePath) {
-        super("generated\\2026687372\\Soupe aux cressons");     // hardcodé !
+        super("Exemples\\generated\\2026687372\\Soupe aux cressons");     // hardcodé !
         pars = new DishParser();
     }
 

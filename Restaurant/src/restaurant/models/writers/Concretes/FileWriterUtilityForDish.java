@@ -25,7 +25,7 @@ public class FileWriterUtilityForDish {
     }
 
     public FileWriterUtilityForDish(Dish dish) {
-        this(String.format("generated\\%d\\%s",dish.getId(),dish.getNom()));
+        this(String.format("Exemples\\generated\\%d\\%s",dish.getId(),dish.getNom()));
         this.dish = dish;
     }
 

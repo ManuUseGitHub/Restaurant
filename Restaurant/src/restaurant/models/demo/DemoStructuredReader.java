@@ -20,7 +20,7 @@ import restaurant.models.parsers.DishParser;
 public class DemoStructuredReader {
     
     public static void main(String[] args) {
-        Path cheminFichierEntree = Paths.get("generated\\2026687372\\Soupe aux cressons");
+        Path cheminFichierEntree = Paths.get("Exemples\\generated\\2026687372\\Soupe aux cressons");
 
         DishParser pars = new DishParser();
         try (BufferedReader entree = Files.newBufferedReader(cheminFichierEntree, StandardCharsets.UTF_8)) {

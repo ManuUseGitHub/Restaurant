@@ -31,7 +31,7 @@ public class FileWriterUtilityForMenu {
     }
 
     public FileWriterUtilityForMenu(Menu menu) {
-        this(String.format("menusGenerated\\%d\\%s", menu.getId(), menu.getNom()));
+        this(String.format("Exemples\\menusGenerated\\%d\\%s", menu.getId(), menu.getNom()));
         this.menu = menu;
     }
 

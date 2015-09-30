@@ -20,7 +20,7 @@ public class DemoMenuFileWriter {
         String name = "Mon menu"; 
         Menu menu = new Menu(name.hashCode(),name,5.5f);
         
-        String outFilePath = String.format("menusGenerated\\%d\\%s",menu.getId(),menu.getNom());
+        String outFilePath = String.format("Exemples\\menusGenerated\\%d\\%s",menu.getId(),menu.getNom());
 
         FileWriterUtilityForMenu writer = new FileWriterUtilityForMenu(outFilePath);
         writer.setMenu(menu);
