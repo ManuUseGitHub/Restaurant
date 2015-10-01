@@ -12,7 +12,7 @@ public class Restaurant {
 
     public static void main(String[] args) {
         ApplicationController appController = new ApplicationController();
-        
+        System.out.println("mon cul c'est du boudin !");
         MainWindow mainWindow = new MainWindow();
         EditMenuWindow editMenuWindow = new EditMenuWindow(mainWindow);
         editMenuWindow.setDishTypes(TypePlat.getAllTypes());
