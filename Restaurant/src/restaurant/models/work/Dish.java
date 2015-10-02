@@ -15,10 +15,6 @@ import restaurant.models.Consommable;
  * @author MAZE2
  */
 public class Dish extends Consommable implements IPlat,Iterable<String> {
-
-    private long id;
-    private String name;
-    private float price;
     private List<String> ingredients;
 
     public Dish(long id, String name, float price, ArrayList<String> ingredients) {
@@ -49,9 +45,9 @@ public class Dish extends Consommable implements IPlat,Iterable<String> {
     public Iterator<String> iterator() {
         ArrayList<String> lignes = new ArrayList<>();
         lignes.add("Plat");
-        lignes.add("\t\tId:" + id);
-        lignes.add("\t\tName:" + name);
-        lignes.add("\t\tPrice:" + price);
+        lignes.add("\t\tId:" + getId());
+        lignes.add("\t\tName:" + getNom());
+        lignes.add("\t\tPrice:" + getPrix());
         lignes.add("\t\tIngredients:");
 
         Iterator<String> navigator = ingredients.iterator();
