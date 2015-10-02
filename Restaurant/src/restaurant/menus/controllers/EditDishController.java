@@ -6,7 +6,7 @@ import restaurant.core.Controller;
 import restaurant.menus.views.messages.MessagesForWriting;
 import restaurant.models.work.Dish;
 import restaurant.models.writers.Concretes.FileWriterUtilityForDish;
-import restaurant.models.writers.generics.Writer;
+import restaurant.models.writers.Writer;
 
 /**
  *

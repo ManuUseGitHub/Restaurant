@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package restaurant.models.Lecteurs;
+package restaurant.models.Reader;
 
 import java.util.List;
-import restaurant.models.Lecteurs.Reader.ReadStatus;
+import restaurant.models.Reader.Reader.ReadStatus;
 
 /**
  *

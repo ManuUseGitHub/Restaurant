@@ -5,14 +5,11 @@
  */
 package restaurant.menus.views;
 
-import restaurant.models.javaUtilities.StringBuilderUtility;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
 import restaurant.menus.controllers.EditMenuController;
-import restaurant.models.work.TypePlat;
 
 /**
  *
@@ -247,19 +244,18 @@ public class EditMenuWindow extends javax.swing.JDialog implements EditMenuContr
     @Override
     public void setDishes(Map<String, List<String>> value) {
         addedDishesModel = value;
-
-        StringBuilderUtility builderU = StringBuilderUtility.getClearInstance();
+        StringBuilder sb = new StringBuilder();
+        List<String> dishPerType;
         
         for (String dishType : value.keySet()) {
-            List<String> dishPerType = value.get(dishType);
-            if (dishPerType.size() > 0) {
-                builderU.appendLine(dishType);
+            if ((dishPerType = value.get(dishType)).size() > 0) {
+                sb.append(dishType).append('\n');
                 for (String aDish : dishPerType) {
-                    builderU.appendAll('\t',aDish,'\n');
+                    sb.append('\t').append(aDish).append('\n');
                 }
             }
         }
-        addedDishes.setText(builderU.getString());
+        addedDishes.setText(sb.toString());
     }
 
     @Override
@@ -277,7 +273,6 @@ public class EditMenuWindow extends javax.swing.JDialog implements EditMenuContr
     
     @Override
     public void setDishTypes(String[] dishTypes) {
-        
         this.dishTypes.setModel(new DefaultComboBoxModel<>(dishTypes));
     }
 

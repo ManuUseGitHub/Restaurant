@@ -5,7 +5,7 @@
  */
 package restaurant.models.demo;
 
-import restaurant.models.javaUtilities.PathTranslator;
+import restaurant.crosplatformPathing.PathTranslator;
 
 /**
  *

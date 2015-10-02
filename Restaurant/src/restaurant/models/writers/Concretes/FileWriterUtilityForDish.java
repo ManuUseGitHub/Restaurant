@@ -6,53 +6,23 @@
 package restaurant.models.writers.Concretes;
 
 //Contient les classes Files, Paths, etc.
-import java.util.Iterator;
-import restaurant.models.javaUtilities.StringBuilderUtility;
 import restaurant.models.work.Dish;
-import restaurant.models.work.IPlat;
 import restaurant.models.writers.FileWriter;
 import restaurant.models.writers.FolderWriter;
-import restaurant.models.writers.generics.IWriter;
-import restaurant.models.writers.generics.Writer;
+import restaurant.models.writers.Writer;
 
 public class FileWriterUtilityForDish {
 
-    private IPlat dish;
-    private final IWriter dishW;
+    private Dish dish;
+    private final Writer dishW;
 
     public FileWriterUtilityForDish(String filePath) {
         dishW = new FileWriter(filePath);
     }
 
     public FileWriterUtilityForDish(Dish dish) {
-        this(String.format("Exemples\\generated\\%d\\%s",dish.getId(),dish.getNom()));
+        this(String.format("Exemples\\generated\\%d\\%s", dish.getId(), dish.getNom()));
         this.dish = dish;
-    }
-
-    private void completeIngredients(StringBuilderUtility builderU) {
-
-//        on ne fait que parcourir la liste des ingrédients.
-//        Donc on va utiliser un iterator et permettre le changement
-//        de la collection utilisée sans devoir affecter le code ci-après
-        Iterator<String> navigator = dish.getIngredients().iterator();
-        while (navigator.hasNext()) {
-            builderU.append("\t\t\t" + navigator.next());
-        }
-        //elements.add("\u001a"); // EOF
-
-    }
-
-    private Iterator<String> dishToIterator() {
-        StringBuilderUtility builderU = StringBuilderUtility.getClearInstanceToIterateOn();
-        builderU.appendAll(
-                "Plat",
-                "\t\tId:" + dish.getId(),
-                "\t\tName:" + dish.getNom(),
-                "\t\tPrice:" + dish.getPrix(),
-                "\t\tIngredients:");
-        completeIngredients(builderU);
-
-        return builderU.iterator();
     }
 
     public Writer.WriteStatus write() {
@@ -62,11 +32,11 @@ public class FileWriterUtilityForDish {
         }
 
         FolderWriter folderW = new FolderWriter();
-        String path = ((FileWriter)dishW).getFolderPath();
+        String path = ((FileWriter) dishW).getFolderPath();
         folderW.setPath(path);
 
         if ((status = folderW.write(dishW.getPath())) == Writer.WriteStatus.SUCEED) {
-            status = dishW.write(dishToIterator());
+            status = dishW.write(dish.iterator());
         }
         return status;
     }
@@ -74,7 +44,7 @@ public class FileWriterUtilityForDish {
     /**
      * @param dish the dish to set
      */
-    public void setDish(IPlat dish) {
+    public void setDish(Dish dish) {
         this.dish = dish;
     }
 }

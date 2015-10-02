@@ -2,11 +2,11 @@ package restaurant.models.work;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
+import java.util.Iterator;
 import java.util.List;
 import restaurant.models.Consommable;
-import restaurant.models.javaUtilities.StringBuilderUtility;
 
-public class Menu extends Consommable implements IMenu {
+public class Menu extends Consommable implements IMenu,Iterable<String> {
 
     private EnumMap<TypePlat, List<String>> etapes;
 
@@ -22,17 +22,36 @@ public class Menu extends Consommable implements IMenu {
         this.setNewEtapes(); // défniti les étapes du menu
     }
     
-    @Override
-    public String toString(){
-        return String.format("Plat=> [id:%d]\t [nom:%s]\t [prix:%f]\n[Est composé de :%s]\n",getId(),this.getNom(),this.getPrix(),"plats");
+
+     @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        
+        Iterator<String> iter = iterator();
+        while(iter.hasNext()){
+            sb.append(iter.next()).append('\n');
+        }
+        return sb.toString();
     }
 
-    private String toStringSteps(TypePlat step){
-        StringBuilderUtility builderU = StringBuilderUtility.getInstanceToIterateOn();
-        etapes.get(step).stream().forEach((dish)->{
-            builderU.appendAll(dish,";");
-        });
-        return builderU.getString();
+    @Override
+    public Iterator<String> iterator() {
+        ArrayList<String> lignes = new ArrayList<>();
+        lignes.add("Menu");
+        lignes.add("\t\tId:" + getId());
+        lignes.add("\t\tName:" + getNom());
+        lignes.add("\t\tPrice:" +getPrix());
+
+        for (TypePlat t : TypePlat.values()) {
+            lignes.add("\t\t" + t.toString() + ":");
+            Iterator<String> navigator = etapes.get(t).iterator();
+            while (navigator.hasNext()) {
+                lignes.add("\t\t\t" + navigator.next());
+            }
+        }
+        //elements.add("\u001a"); // EOF
+
+        return lignes.iterator();
     }
 
     @Override

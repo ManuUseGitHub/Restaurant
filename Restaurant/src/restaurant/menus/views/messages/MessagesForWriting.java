@@ -1,7 +1,7 @@
 package restaurant.menus.views.messages;
 
 import javax.swing.JOptionPane;
-import restaurant.models.writers.generics.Writer;
+import restaurant.models.writers.Writer;
 
 /**
  *
@@ -11,20 +11,22 @@ public class MessagesForWriting {
 
     public static void showMessage(Writer.WriteStatus status) {
 
+        String title;
+        int iconMessageBox;
         switch (status) {
             case OUT_FILE_PATH_NOT_FOUND:
-                javax.swing.JOptionPane.showMessageDialog(null, "Le fichier à l'adresse specifié est introuvable",
-                        "erreur de fichier", JOptionPane.ERROR_MESSAGE);
+                title = "erreur de fichier";
+                iconMessageBox = JOptionPane.ERROR_MESSAGE;
                 break;
             case SUCEED:
-                javax.swing.JOptionPane.showMessageDialog(null, "Plat ajouté",
-                        "Opération réussie", JOptionPane.INFORMATION_MESSAGE);
+                title = "Opération réussie";
+                iconMessageBox = JOptionPane.INFORMATION_MESSAGE;
                 break;
             default:
-                javax.swing.JOptionPane.showMessageDialog(null, String.format("Une erreur inconnue s'est produite, type:%s", status.toString()),
-                        "erreur inconnue", JOptionPane.ERROR_MESSAGE);
+                title = "erreur inconnue";
+                iconMessageBox = JOptionPane.ERROR_MESSAGE;
                 break;
         }
-
+        javax.swing.JOptionPane.showMessageDialog(null, status.getMessage(), title, iconMessageBox);
     }
 }

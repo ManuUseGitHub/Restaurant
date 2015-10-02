@@ -6,16 +6,13 @@
 package restaurant.models.writers;
 
 import java.io.IOException;
-import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Iterator;
-import restaurant.models.javaUtilities.PathTranslator;
-import restaurant.models.javaUtilities.StringBuilderUtility;
-import restaurant.models.writers.generics.Writer;
+import restaurant.crosplatformPathing.PathTranslator;
 
 /**
  *
@@ -28,12 +25,12 @@ public class FileWriter extends Writer {
     }
 
     public String getFolderPath() {
-        StringBuilderUtility builderU = StringBuilderUtility.getClearInstance();
+        StringBuilder sb = new StringBuilder();
         String[] subs = path.split("\\\\");// \ doit être échapé => \\ pour signifier le caractère '\' mais en regex, il faut aussi échapper donc \\\\ 
         for (int i = 0, t = subs.length - 1; i < t; ++i) {
-            builderU.appendAll(subs[i], i < t - 1 ? "\\" : "");
+            sb.append(subs[i]).append(i < t - 1 ? "\\" : "");
         }
-        return PathTranslator.translate(builderU.getString());
+        return PathTranslator.translate(sb.toString());
     }
 
     @Override

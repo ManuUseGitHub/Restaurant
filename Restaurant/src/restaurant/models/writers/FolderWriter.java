@@ -7,8 +7,7 @@ package restaurant.models.writers;
 
 import java.io.File;
 import java.util.Iterator;
-import restaurant.models.javaUtilities.PathTranslator;
-import restaurant.models.writers.generics.Writer;
+import restaurant.crosplatformPathing.PathTranslator;
 
 /**
  *

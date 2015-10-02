@@ -7,7 +7,7 @@ package restaurant.models.demo;
 
 import restaurant.models.work.Menu;
 import restaurant.models.writers.Concretes.FileWriterUtilityForMenu;
-import restaurant.models.writers.generics.Writer;
+import restaurant.models.writers.Writer;
 
 /**
  *
