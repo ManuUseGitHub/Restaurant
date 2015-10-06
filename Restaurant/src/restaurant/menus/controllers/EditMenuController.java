@@ -8,6 +8,7 @@ import restaurant.core.Controller;
  * @author Nicolas
  */
 public class EditMenuController extends Controller {
+//<editor-fold defaultstate="collapsed" desc="interface EditMenuWindow ">
 
     public interface EditMenuWindow {
 
@@ -32,7 +33,7 @@ public class EditMenuController extends Controller {
         void setErrorForDishes(String value);
 
         void setDishTypes(List<String> dishTypes);
-        
+
         void setDishTypes(String[] dishTypes); // personnal
 
         void setDishList(List<String> dishList);
@@ -41,6 +42,7 @@ public class EditMenuController extends Controller {
 
         void hide();
     }
+//</editor-fold>
 
     public EditMenuController(EditMenuWindow window) {
         this.setWindow(window);
@@ -61,11 +63,11 @@ public class EditMenuController extends Controller {
     public void handleNavigation(Object args) {
         window.show();
     }
-    
+
     public void saveEvent() {
         this.window.hide();
     }
-    
+
     public void cancelEvent() {
         this.window.hide();
     }

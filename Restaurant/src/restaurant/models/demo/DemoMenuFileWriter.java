@@ -6,7 +6,7 @@
 package restaurant.models.demo;
 
 import restaurant.models.work.Menu;
-import restaurant.models.writers.Concretes.FileWriterUtilityForMenu;
+import restaurant.core.MenuFileWriterObserver;
 import restaurant.models.writers.Writer;
 
 /**
@@ -22,7 +22,7 @@ public class DemoMenuFileWriter {
         
         String outFilePath = String.format("Exemples\\menusGenerated\\%d\\%s",menu.getId(),menu.getNom());
 
-        FileWriterUtilityForMenu writer = new FileWriterUtilityForMenu(outFilePath);
+        MenuFileWriterObserver writer = new MenuFileWriterObserver(outFilePath);
         writer.setMenu(menu);
         Writer.WriteStatus status;
 

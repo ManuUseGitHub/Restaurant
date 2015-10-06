@@ -5,6 +5,7 @@
  */
 package restaurant.models.writers;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.nio.file.Files;
@@ -24,19 +25,18 @@ public class FileWriter extends Writer {
         super(path);
     }
 
+    /**
+     * 
+     * @return 
+     */
     public String getFolderPath() {
-        StringBuilder sb = new StringBuilder();
-        String[] subs = path.split("\\\\");// \ doit être échapé => \\ pour signifier le caractère '\' mais en regex, il faut aussi échapper donc \\\\ 
-        for (int i = 0, t = subs.length - 1; i < t; ++i) {
-            sb.append(subs[i]).append(i < t - 1 ? "\\" : "");
-        }
-        return PathTranslator.translate(sb.toString());
+        return new File(path).getParent();
     }
 
     @Override
     public WriteStatus write(Iterator<String> contenu) {
         Path outFilePath = Paths.get(getPath());
-        try (final OutputStreamWriter out = new OutputStreamWriter(Files.newOutputStream(outFilePath, StandardOpenOption.CREATE), "UTF-8")) {
+        try (final OutputStreamWriter out = new OutputStreamWriter(Files.newOutputStream(outFilePath, StandardOpenOption.CREATE,StandardOpenOption.WRITE), "UTF-8")) {
             while (contenu.hasNext()) {
 //                if (!contenu.next().equals("\u001a")) {
                     String line = contenu.next() + "\r\n";

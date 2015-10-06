@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import restaurant.crosplatformPathing.PathTranslator;
 import restaurant.models.work.Dish;
-import restaurant.models.writers.Concretes.FileWriterUtilityForDish;
+import restaurant.core.DishFileWriterController;
 import restaurant.models.writers.Writer;
 
 /**
@@ -28,11 +28,11 @@ public class DemoDishFileWriter {
         
         String outFilePath = String.format("Exemples\\generated\\%d\\%s",dish.getId(),dish.getNom());
 
-        FileWriterUtilityForDish writer = new FileWriterUtilityForDish(outFilePath);
+        DishFileWriterController writer = new DishFileWriterController(outFilePath);
         writer.setDish(dish);
         Writer.WriteStatus status;
 
-        if ((status = writer.write()) == Writer.WriteStatus.OUT_FILE_PATH_NOT_FOUND) {
+        if ((status = writer.tryWrite()) == Writer.WriteStatus.OUT_FILE_PATH_NOT_FOUND) {
             throw new Exception(String.format("Le fichier à l'adresse :%s est introuvable", outFilePath));
 
         } else {

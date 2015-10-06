@@ -35,7 +35,7 @@ public class FolderWriter extends Writer {
     @Override
     public WriteStatus write(String content) {
         if (!new File(PathTranslator.translate(getPath())).mkdirs()) {
-            return WriteStatus.ALLREADY_EXISTS;
+            return WriteStatus.ALLREADY_EXISTS.addMessage("Entry allready exists !");
         }
         return WriteStatus.SUCEED;
     }
