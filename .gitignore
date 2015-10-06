@@ -13,6 +13,7 @@ nbproject/private/
 **/nbdist/**
 nbactions.xml
 nb-configuration.xml
+private.xml
 **/[Bb]in/**
 
 # Generated and exemples
